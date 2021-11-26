@@ -3,9 +3,12 @@
     <!-- Insert header here -->
   </nb-layout-header>
   <nb-layout-column>
+    <nb-sidebar tag="right" right state="collapsed">
+      <ng-template appDynamicHost>
+      </ng-template>
+    </nb-sidebar>
     <router-outlet></router-outlet>
   </nb-layout-column>
-
   <nb-layout-footer fixed>
     <!-- Insert footer here -->
   </nb-layout-footer>
