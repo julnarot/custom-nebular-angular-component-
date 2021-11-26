@@ -1,0 +1,65 @@
+<nb-card>
+  <nb-card-header>{{title}}
+    <p class="m-0 text-muted"><small>Assignation of {{title}} </small></p>
+  </nb-card-header>
+  <nb-card-body>
+    <div class="row">
+      <div class="col-md-6 p-0">
+        <nb-card style="min-width: 350px" status="primary" size="small">
+          <nb-card-header>
+            <div class="d-flex justify-content-between" *ngIf="!searchingSource">
+              <span>{{title}} available</span>
+              <div>
+                <nb-icon icon="search-outline" (click)="searchingSource=!searchingSource"></nb-icon>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-between" *ngIf="searchingSource">
+              <input nbInput [placeholder]="title" *ngIf="searchingSource" fullWidth size="tiny">
+              <button nbSuffix nbButton ghost (click)="searchingSource=!searchingSource">
+                <nb-icon icon="close-outline"></nb-icon>
+              </button>
+            </div>
+          </nb-card-header>
+          <nb-card-body class="p-0">
+            <nb-list>
+              <nb-list-item *ngFor="let item of source" (click)="addToDestiny(item)"
+                            [ngClass]="{'text-muted unselectable': item.unSelectable, 'selectable': !item.unSelectable}">
+                {{item.title}}
+              </nb-list-item>
+            </nb-list>
+          </nb-card-body>
+        </nb-card>
+      </div>
+      <div class="col-md-6 p-0">
+        <nb-card style="min-width: 350px" status="primary" size="small">
+          <nb-card-header>
+            <div class="d-flex justify-content-between" *ngIf="!searchingDestiny">
+              <span>{{title}} Assigned</span>
+              <div>
+                <nb-icon icon="search-outline" (click)="searchingDestiny=!searchingDestiny"></nb-icon>
+              </div>
+            </div>
+            <div class="d-flex justify-content-between" *ngIf="searchingDestiny">
+              <input nbInput [placeholder]="title" *ngIf="searchingDestiny" fullWidth size="tiny">
+              <button nbSuffix nbButton ghost (click)="searchingDestiny=!searchingDestiny">
+                <nb-icon icon="close-outline"></nb-icon>
+              </button>
+            </div>
+          </nb-card-header>
+          <nb-card-body class="p-0" size="small">
+            <nb-list>
+              <nb-list-item *ngFor="let item of destiny" (click)="restoreItem(item)"
+                            [ngClass]="{'text-muted unselectable': item.unSelectable, 'selectable': !item.unSelectable}">
+                {{item.title}}
+              </nb-list-item>
+            </nb-list>
+          </nb-card-body>
+        </nb-card>
+      </div>
+    </div>
+  </nb-card-body>
+  <nb-card-footer class="d-flex justify-content-center">
+    <button nbButton size="small" (click)="onSave()">Guardar</button>
+  </nb-card-footer>
+</nb-card>
