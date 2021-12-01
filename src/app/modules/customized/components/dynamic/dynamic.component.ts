@@ -24,15 +24,13 @@ export class DynamicComponent implements OnInit {
   }
 
   lauchComponent(): void {
-    this.lauchSidenabService.setDynamicComponent(NotFoundItemComponent);
-    this.lauchSidenabService.getDynamicComponentResponse$().subscribe((com: any) => {
-      com.instance.msg = 'Hello!!';
-      com.instance.clickLoad.subscribe((f: any) => {
-
-        this.sidebarService.collapse('right')
-      })
+    this.sidebarService.expand('right');
+    const component = this.lauchSidenabService.onLauchComponent(NotFoundItemComponent);
+    component.instance.msg = 'helLo WOrd!!!';
+    component.instance.clickLoad.subscribe((f: any) => {
+      console.log('output event', f)
+      this.sidebarService.collapse('right')
     })
-
   }
 
 }

@@ -3,6 +3,7 @@ import {CommonModule} from '@angular/common';
 import {NbButtonModule, NbCardModule, NbIconModule} from "@nebular/theme";
 import {DynamicHostDirective} from "./directives/dynamic-host.directive";
 import {NotFoundItemComponent} from './components/not-found-item/not-found-item.component';
+import {ContainerDynamDirectiveComponent} from "./components/container-dynam-directive.component";
 
 const ANG_CORE = [
   CommonModule
@@ -17,7 +18,7 @@ const DIRECTVS = [
   DynamicHostDirective
 ]
 const COMPNTS = [
-  NotFoundItemComponent
+  NotFoundItemComponent,ContainerDynamDirectiveComponent
 ]
 
 @NgModule({

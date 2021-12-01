@@ -1,35 +1,23 @@
-import {Injectable} from '@angular/core';
+import {ComponentFactoryResolver, Injectable} from '@angular/core';
 import {Observable, Subject} from "rxjs";
+import {ContainerDynamDirectiveComponent} from "../basics/components/container-dynam-directive.component";
+import {NbSidebarService} from "@nebular/theme";
 
 @Injectable({
   providedIn: 'root'
 })
 export class LauchSidenabService {
-  dynamComponent$: any = new Subject<any>()
-  dynamComponentResponse$: any = new Subject<any>()
+  containerDynamDirectiveComponent: ContainerDynamDirectiveComponent;
 
-  constructor() {
+  constructor(private componentFactoryResolver: ComponentFactoryResolver) {
   }
 
-  setDynamicComponent(component: any): any {
-    this.dynamComponent$.next(component)
+  onLauchComponent(component: any): any {
+    this.containerDynamDirectiveComponent.dynamicHost.viewContainerRef.clear();
+    return this.containerDynamDirectiveComponent.dynamicHost.viewContainerRef
+      .createComponent(
+        this.componentFactoryResolver.resolveComponentFactory(component)
+      );
   }
-
-  getDynamicHost(): Observable<any> {
-    return this.dynamComponent$.asObservable();
-  }
-
-  getDynamicComponent(): Observable<any> {
-    return this.dynamComponent$.asObservable();
-  }
-
-  setDynamicComponentResponse$(component: any) {
-    this.dynamComponentResponse$.next(component)
-  }
-
-  getDynamicComponentResponse$(): Observable<any> {
-    return this.dynamComponentResponse$.asObservable();
-  }
-
 
 }

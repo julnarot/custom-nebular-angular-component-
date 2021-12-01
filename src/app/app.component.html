@@ -1,11 +1,12 @@
 <nb-layout>
   <nb-layout-header fixed>
     <!-- Insert header here -->
+    <span routerLink="customized/dual-selector" class="btn">dual-selector</span> |
+    <span routerLink="customized/dynamic-component" class="btn">dinamic-comp</span>
   </nb-layout-header>
   <nb-layout-column>
     <nb-sidebar tag="right" right state="collapsed">
-      <ng-template appDynamicHost>
-      </ng-template>
+      <app-container-dynam-directive></app-container-dynam-directive>
     </nb-sidebar>
     <router-outlet></router-outlet>
   </nb-layout-column>

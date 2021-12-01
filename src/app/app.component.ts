@@ -8,31 +8,10 @@ import {DynamicHostDirective} from "./modules/shared/basics/directives/dynamic-h
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent implements OnInit {
+export class AppComponent{
   title = 'custom-nebular-angular-components';
-  @ViewChild(DynamicHostDirective) public dynamicHost: DynamicHostDirective;
 
-  constructor(
-    private lauchSidenabRightService: LauchSidenabService,
-    private componentFactoryResolver: ComponentFactoryResolver,
-    private sidebarService: NbSidebarService,
-  ) {
+  constructor() {
   }
 
-  ngOnInit() {
-    this.lauchSidenabRightService.getDynamicHost()
-      .subscribe((component: any) => {
-        this.onLauchRightSidenab(component)
-      });
-  }
-
-  onLauchRightSidenab(compo: any) {
-    this.sidebarService.expand('right');
-    const component = this.componentFactoryResolver.resolveComponentFactory(compo);
-    this.dynamicHost.viewContainerRef.clear();
-    const resp = this.dynamicHost.viewContainerRef.createComponent(component)
-    setTimeout(() => {
-      this.lauchSidenabRightService.setDynamicComponentResponse$(resp);
-    }, 2)
-  }
 }

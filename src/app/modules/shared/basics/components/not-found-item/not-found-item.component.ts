@@ -8,7 +8,7 @@ import {Component, OnInit, Output, EventEmitter, Input} from '@angular/core';
         <p>
           not-found-item works! {{msg}}
         </p>
-        <button nbButton outline (click)="clickLoad.emit(null)">
+        <button nbButton outline (click)="clickLoad.emit(1)">
           <nb-icon icon="close-outline"></nb-icon>
         </button>
       </nb-card-body>
