@@ -15,8 +15,6 @@ export class ContainerDynamDirectiveComponent implements OnInit {
   @ViewChild(DynamicHostDirective) public dynamicHost: DynamicHostDirective;
 
   constructor(
-    private componentFactoryResolver: ComponentFactoryResolver,
-    private sidebarService: NbSidebarService,
     private lauchSidenabRightService: LauchSidenabService,
   ) {
     this.lauchSidenabRightService.containerDynamDirectiveComponent = this;
