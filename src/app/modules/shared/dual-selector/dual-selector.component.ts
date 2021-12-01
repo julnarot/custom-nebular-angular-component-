@@ -8,6 +8,8 @@ import {ItemDual} from "../../../interfaces/ItemDual";
 })
 export class DualSelectorComponent implements OnInit {
   item: any = {};
+  filArgSource: string = '';
+  filArgDestiny: string = '';
   searchingSource = false;
   searchingDestiny = false;
   @Input() destiny: ItemDual[] = [];

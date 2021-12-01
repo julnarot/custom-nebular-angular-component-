@@ -15,15 +15,16 @@
             </div>
 
             <div class="d-flex justify-content-between" *ngIf="searchingSource">
-              <input nbInput [placeholder]="title" *ngIf="searchingSource" fullWidth size="tiny">
-              <button nbSuffix nbButton ghost (click)="searchingSource=!searchingSource">
+              <input nbInput [placeholder]="title" *ngIf="searchingSource" fullWidth size="tiny"
+                     [(ngModel)]="filArgSource">
+              <button nbSuffix nbButton ghost (click)="searchingSource=!searchingSource;filArgSource=''">
                 <nb-icon icon="close-outline"></nb-icon>
               </button>
             </div>
           </nb-card-header>
           <nb-card-body class="p-0">
             <nb-list>
-              <nb-list-item *ngFor="let item of source" (click)="addToDestiny(item)"
+              <nb-list-item *ngFor="let item of source|singleFilter:filArgSource" (click)="addToDestiny(item)"
                             [ngClass]="{'text-muted unselectable': item.unSelectable, 'selectable': !item.unSelectable}">
                 {{item.title}}
               </nb-list-item>
@@ -37,11 +38,11 @@
             <div class="d-flex justify-content-between" *ngIf="!searchingDestiny">
               <span>{{title}} Assigned</span>
               <div>
-                <nb-icon icon="search-outline" (click)="searchingDestiny=!searchingDestiny"></nb-icon>
+                <nb-icon icon="search-outline" (click)="searchingDestiny=!searchingDestiny; filArgDestiny=''"></nb-icon>
               </div>
             </div>
             <div class="d-flex justify-content-between" *ngIf="searchingDestiny">
-              <input nbInput [placeholder]="title" *ngIf="searchingDestiny" fullWidth size="tiny">
+              <input nbInput [placeholder]="title" *ngIf="searchingDestiny" fullWidth size="tiny" [(ngModel)]="filArgDestiny">
               <button nbSuffix nbButton ghost (click)="searchingDestiny=!searchingDestiny">
                 <nb-icon icon="close-outline"></nb-icon>
               </button>
@@ -49,7 +50,7 @@
           </nb-card-header>
           <nb-card-body class="p-0" size="small">
             <nb-list>
-              <nb-list-item *ngFor="let item of destiny" (click)="restoreItem(item)"
+              <nb-list-item *ngFor="let item of destiny|singleFilter: filArgDestiny" (click)="restoreItem(item)"
                             [ngClass]="{'text-muted unselectable': item.unSelectable, 'selectable': !item.unSelectable}">
                 {{item.title}}
               </nb-list-item>

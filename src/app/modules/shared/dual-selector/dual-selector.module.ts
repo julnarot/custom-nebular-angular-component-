@@ -9,22 +9,26 @@ import {
   NbInputModule,
   NbListModule
 } from "@nebular/theme";
+import { SingleFilterPipe } from './single-filter.pipe';
+import {FormsModule} from "@angular/forms";
 
 
 
 @NgModule({
   declarations: [
-    DualSelectorComponent
+    DualSelectorComponent,
+    SingleFilterPipe
   ],
-  imports: [
-    CommonModule,
-    NbCardModule,
-    NbIconModule,
-    NbListModule,
-    NbButtonModule,
-    NbInputModule,
-    NbFormFieldModule
-  ],
+    imports: [
+        CommonModule,
+        NbCardModule,
+        NbIconModule,
+        NbListModule,
+        NbButtonModule,
+        NbInputModule,
+        NbFormFieldModule,
+        FormsModule
+    ],
   exports: [
     DualSelectorComponent
   ]
