@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import {CustomizedComponent} from "./customized.component";
 import {DualExampleComponent} from "./components/dual-example/dual-example.component";
 import {DynamicComponent} from "./components/dynamic/dynamic.component";
+import {ActionsPopoverComponent} from "./components/actions-popover/actions-popover.component";
 
 const routes: Routes = [
   {
@@ -15,6 +16,9 @@ const routes: Routes = [
       }, {
         path: 'dynamic-component',
         component: DynamicComponent
+      }, {
+        path: 'dynamic-acction-popover',
+        component: ActionsPopoverComponent
       }
     ]
   }

@@ -7,19 +7,23 @@ import { DualExampleComponent } from './components/dual-example/dual-example.com
 import {DualSelectorModule} from "../shared/dual-selector/dual-selector.module";
 import {BasicsModule} from "../shared/basics/basics.module";
 import { DynamicComponent } from './components/dynamic/dynamic.component';
+import { ActionsPopoverComponent } from './components/actions-popover/actions-popover.component';
+import {ButtonPopoverActionModule} from "../shared/button-popover-action/button-popover-action.module";
 
 
 @NgModule({
   declarations: [
     CustomizedComponent,
     DualExampleComponent,
-    DynamicComponent
+    DynamicComponent,
+    ActionsPopoverComponent
   ],
-  imports: [
-    CommonModule,
-    CustomizedRoutingModule,
-    DualSelectorModule,
-    BasicsModule
-  ]
+    imports: [
+        CommonModule,
+        CustomizedRoutingModule,
+        DualSelectorModule,
+        BasicsModule,
+        ButtonPopoverActionModule
+    ]
 })
 export class CustomizedModule { }
