@@ -9,21 +9,24 @@ import {BasicsModule} from "../shared/basics/basics.module";
 import { DynamicComponent } from './components/dynamic/dynamic.component';
 import { ActionsPopoverComponent } from './components/actions-popover/actions-popover.component';
 import {ButtonPopoverActionModule} from "../shared/button-popover-action/button-popover-action.module";
-
+import { TreeExamplesComponent } from './components/tree-examples/tree-examples.component';
+import  { TreeActionsModule } from '../shared/tree-actions/tree-actions.module';
 
 @NgModule({
   declarations: [
     CustomizedComponent,
     DualExampleComponent,
     DynamicComponent,
-    ActionsPopoverComponent
+    ActionsPopoverComponent,
+    TreeExamplesComponent
   ],
     imports: [
         CommonModule,
         CustomizedRoutingModule,
         DualSelectorModule,
         BasicsModule,
-        ButtonPopoverActionModule
+        ButtonPopoverActionModule,
+	TreeActionsModule
     ]
 })
 export class CustomizedModule { }

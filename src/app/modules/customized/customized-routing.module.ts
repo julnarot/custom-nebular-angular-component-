@@ -4,6 +4,7 @@ import {CustomizedComponent} from "./customized.component";
 import {DualExampleComponent} from "./components/dual-example/dual-example.component";
 import {DynamicComponent} from "./components/dynamic/dynamic.component";
 import {ActionsPopoverComponent} from "./components/actions-popover/actions-popover.component";
+import  { TreeExamplesComponent } from "./components/tree-examples/tree-examples.component";
 
 const routes: Routes = [
   {
@@ -19,6 +20,9 @@ const routes: Routes = [
       }, {
         path: 'dynamic-acction-popover',
         component: ActionsPopoverComponent
+      }, {
+	path: 'tree',
+	component: TreeExamplesComponent
       }
     ]
   }

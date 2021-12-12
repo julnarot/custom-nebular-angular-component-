@@ -1,0 +1,65 @@
+.treeview {
+  //color: nb-theme(color-secondary);
+  nb-card{
+    border-bottom-color: #8f9bb3;
+    border-left-color: #8f9bb3;
+    border-right-color: #8f9bb3;
+  }
+  .plus-card {
+    margin: 0;
+    border-color: #8f9bb3;
+  }
+
+  ul {
+    padding: 0;
+    list-style: none;
+    //color: nb-theme(color-secondary);
+    position: relative;
+    ul {
+      margin-left: 5.5em;
+    }
+    ul::before {
+      content: '';
+      display: block;
+      width: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-left: 1px solid;
+      bottom: 2.7rem;
+      border-color: #8f9bb3;
+    }
+  }
+  ul:first-child::before {
+    display: none;
+  }
+  li {
+    padding: 0.4rem 2em;
+    // line-height: 2em;
+    font-weight: 700;
+    position: relative;
+    .card {
+      .lamb-icon-link {
+        width: 11rem;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+    }
+  }
+  ul li.lamb-first-li::before {
+    border: none;
+  }
+  ul li::before {
+    content: '';
+    display: block;
+    width: 30px; // 60
+    height: 0;
+    border-top: 1px solid;
+    margin-top: 18px; //30
+    position: absolute;
+    top: 1em;
+    left: 0;
+    border-color: #8f9bb3; //
+  }
+}
