@@ -16,7 +16,11 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory
+
+## deploy on GitHub Pages
+
+Run `ng build --prod --base-href=/custom-nebular-angular-components/`, push and merge to master  and go to [Repo Pages](https://julnarot.github.io/custom-nebular-angular-components/) page 
 
 ## Running unit tests
 

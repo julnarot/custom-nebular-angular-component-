@@ -1,0 +1,11 @@
+
+    <nb-card accent="primary">
+      <nb-card-header class="d-flex justify-content-between">
+        Example
+        <app-button-popover-action [items]="actions"
+                                   (optionSelected)="onItemSelected($event)"></app-button-popover-action>
+      </nb-card-header>
+      <nb-card-body>
+        Action: {{action}}
+      </nb-card-body>
+    </nb-card>
