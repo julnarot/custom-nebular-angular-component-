@@ -1,6 +1,7 @@
 # CustomNebularAngularComponents
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.8.
+
+This project was created with proposite of create custom component based on atomic designe system and was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.8.
 
 ## Development server
 
